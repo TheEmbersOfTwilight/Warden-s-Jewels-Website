@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warden's Jewels - Made in Prism</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #2a2a2a;
+            color: #ffffff;
+        }
+
+        .header {
+            background-color: #0d0d0d;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #2d7a4f;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: #2d7a4f;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 2px solid #2d7a4f;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 28px;
+            color: #2d7a4f;
+            margin-bottom: 30px;
+        }
+
+        .promise {
+            font-size: 20px;
+            color: #cccccc;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .catchphrase {
+            font-size: 24px;
+            color: #ffd700;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            padding: 60px 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .section-title {
+            font-size: 42px;
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .product-box {
+            background-color: #0d0d0d;
+            border: 3px solid #2d7a4f;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 32px;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .price-box {
+            background-color: #2d7a4f;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .price {
+            font-size: 36px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .loyalty-container {
+            background-color: #0d0d0d;
+            border: 3px solid #ffd700;
+            padding: 50px;
+            margin: 40px 0;
+        }
+
+        .loyalty-title {
+            font-size: 38px;
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .loyalty-subtitle {
+            font-size: 20px;
+            color: #2d7a4f;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .tier-box {
+            background-color: #1a1a1a;
+            border: 2px solid #2d7a4f;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .tier-number {
+            font-size: 24px;
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .tier-discount {
+            font-size: 32px;
+            color: #2d7a4f;
+            font-weight: bold;
+        }
+
+        .game-announcement {
+            background-color: #0d0d0d;
+            border: 4px solid #ffd700;
+            padding: 60px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .game-title {
+            font-size: 48px;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .game-tagline {
+            font-size: 24px;
+            color: #2d7a4f;
+            margin-bottom: 30px;
+        }
+
+        .game-description {
+            font-size: 20px;
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+
+        .mlfd-section {
+            background-color: #1a1a1a;
+            border: 3px solid #2d7a4f;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .mlfd-title {
+            font-size: 32px;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .mlfd-description {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+
+        .teams {
+            font-size: 18px;
+            color: #2d7a4f;
+            margin: 20px 0;
+        }
+
+        .proceeds {
+            font-size: 20px;
+            color: #ffd700;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #0d0d0d;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 3px solid #2d7a4f;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .loyalty-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Warden's Jewels</div>
+        <div class="tagline">Made in Prism</div>
+    </div>
+
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Premium Gaming Consoles</h1>
+            <p class="promise">We promise to provide a fun and streamlined gaming experience, along with quality parts for maximum performance.</p>
+            <p class="catchphrase">It's so good, you'll never want to leave.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="products-grid">
+                <div class="product-box">
+                    <h3 class="product-title">The Beryl Box</h3>
+                    <p class="product-description">Our flagship console delivers a fun and streamlined gaming experience with quality parts for maximum performance.</p>
+                    <div class="price-box">
+                        <div class="price">Premium Console</div>
+                    </div>
+                </div>
+
+                <div class="product-box">
+                    <h3 class="product-title">The Emerpod</h3>
+                    <p class="product-description">The Emerpod allows you to play your favorite games on the go. Despite its small size, the Emerpod has near infinite potential and can be customized to your heart's content.</p>
+                    <div class="price-box">
+                        <div class="price">Handheld Gaming</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-box" style="max-width: 600px; margin: 0 auto;">
+                <h3 class="product-title">Complete Package</h3>
+                <p class="product-description">The Beryl Box, The Emerpod, and all accessories</p>
+                <div class="price-box">
+                    <div class="price">$2,250</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="loyalty-container">
+                <h2 class="loyalty-title">Emerald Status</h2>
+                <p class="loyalty-subtitle">Our loyalty program that all customers can join for free</p>
+                <p style="text-align: center; color: #cccccc; margin-bottom: 40px; font-size: 18px;">With every consecutive purchase, you will get an increased discount.</p>
+                
+                <div class="tiers-grid">
+                    <div class="tier-box">
+                        <div class="tier-number">1st Purchase</div>
+                        <div class="tier-discount">Full Price</div>
+                    </div>
+                    <div class="tier-box">
+                        <div class="tier-number">2nd Purchase</div>
+                        <div class="tier-discount">10% OFF</div>
+                    </div>
+                    <div class="tier-box">
+                        <div class="tier-number">3rd Purchase</div>
+                        <div class="tier-discount">20% OFF</div>
+                    </div>
+                    <div class="tier-box">
+                        <div class="tier-number">4th Purchase</div>
+                        <div class="tier-discount">35% OFF</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="game-announcement">
+                <h2 class="game-title">Warden's Sanctum</h2>
+                <p class="game-tagline">The game everyone has been waiting for is here!</p>
+                <p class="game-description">Every purchase of our products unlocks access to our exclusive game, "Warden's Sanctum."</p>
+                <p class="game-description">A hidden gem revealed - available now with any purchase!</p>
+            </div>
+
+            <div class="mlfd-section">
+                <h3 class="mlfd-title">MLFD Football Sim</h3>
+                <p class="mlfd-description">To better support our community we have partnered with MLFD to make a football sim featuring their teams.</p>
+                <div class="teams">
+                    <p>• O'Block Shootas</p>
+                    <p>• Las Vegas Leo's</p>
+                    <p>• Detroit Dihmanders</p>
+                    <p>• and more</p>
+                </div>
+                <p class="proceeds">10% of all proceeds will go directly to supporting MLFD's cause</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="footer-text">© 2024 Warden's Jewels</p>
+    </div>
+</body>
+</html>
